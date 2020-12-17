@@ -98,3 +98,6 @@ Thumbs.db
 # Migration
 drupal7
 node_modules
+
+# CiviCRM
+/web/libraries/civicrm
