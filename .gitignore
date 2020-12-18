@@ -100,4 +100,5 @@ drupal7
 node_modules
 
 # CiviCRM
-/web/libraries/civicrm
+# Commit compiled library temporarily.
+# /web/libraries/civicrm
