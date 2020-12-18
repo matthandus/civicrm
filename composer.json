@@ -88,7 +88,6 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": "true",
-        "compile-whitelist": ["civicrm/civicrm-core", "civicrm/composer-compile-lib"]
+        "enable-patching": "true"
     }
 }
