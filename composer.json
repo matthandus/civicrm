@@ -22,7 +22,8 @@
         "composer/installers": "^1.9",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
-        "drupal/core-recommended": "^9.1"
+        "drupal/core-recommended": "^9.1",
+        "drupal/uswds": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -88,7 +89,9 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
-        "enable-patching": "true",
-        "compile-whitelist": ["civicrm/civicrm-core", "civicrm/composer-compile-lib"]
+        "enable-patching": "true"
+    },
+    "scripts": {
+        "pre-install-cmd": "git config --global core.autocrlf true"
     }
 }
