@@ -102,5 +102,8 @@
     },
     "scripts": {
         "pre-install-cmd": "git config --global core.autocrlf true"
+    },
+    "require-dev": {
+        "drush/drush": "^10.3"
     }
 }
