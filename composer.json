@@ -31,6 +31,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/podcast": "^1.1",
         "drupal/seckit": "^2.0",
+        "drupal/smtp": "^1.0",
         "drupal/svg_image": "^1.14",
         "drupal/uswds": "^2.0",
         "drupal/webform": "^6.0",
