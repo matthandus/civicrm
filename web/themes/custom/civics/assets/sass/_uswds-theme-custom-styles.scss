@@ -19,3 +19,17 @@ i.e.
 @include u-padding-right('05');
 ----------------------------------------
 */
+.usa-navbar {
+  height: auto;
+
+  @include at-media-max($theme-header-min-width) {
+    border-bottom: none;
+  }
+}
+
+#block-civics-content {
+
+  a {
+    @include typeset-link;
+  }
+}
