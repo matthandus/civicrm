@@ -25,6 +25,7 @@ i.e.
   @include at-media-max($theme-header-min-width) {
     border-bottom: none;
   }
+
 }
 
 #block-civics-content {
@@ -32,4 +33,5 @@ i.e.
   a {
     @include typeset-link;
   }
+
 }

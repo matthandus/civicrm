@@ -105,7 +105,7 @@
         "compile-whitelist": ["civicrm/civicrm-core", "civicrm/composer-compile-lib"]
     },
     "scripts": {
-        "pre-install-cmd": "git config --global core.autocrlf true"
+        "pre-install-cmd": "git config --global core.autocrlf input"
     },
     "require-dev": {
         "drush/drush": "^10.3"
