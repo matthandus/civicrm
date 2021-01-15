@@ -23,6 +23,7 @@
         "drupal/admin_toolbar": "^2.4",
         "drupal/antibot": "^1.4",
         "drupal/backup_migrate": "^5.0@RC",
+        "drupal/commerce": "^2.23",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
