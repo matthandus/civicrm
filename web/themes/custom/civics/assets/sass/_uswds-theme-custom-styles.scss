@@ -1,0 +1,37 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+.usa-navbar {
+  height: auto;
+
+  @include at-media-max($theme-header-min-width) {
+    border-bottom: none;
+  }
+
+}
+
+#block-civics-content {
+
+  a {
+    @include typeset-link;
+  }
+
+}
