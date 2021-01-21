@@ -1,0 +1,10 @@
+{
+  "name": "drupal/views_extras",
+  "description": "Views Arguments based on session, cookie or token..",
+  "type": "drupal-module",
+  "homepage": "https://www.drupal.org/project/views_extras",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/views_extras"
+  },
+  "license": "GPL-2.0+"
+}

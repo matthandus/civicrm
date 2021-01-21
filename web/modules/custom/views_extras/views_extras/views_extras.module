@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains apf_custom.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function views_extras_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the apf_custom module.
+    case 'help.page.apf_custom':
+      $output = file_get_contents(drupal_get_path('module', 'views_extras') . '/README.md');
+      return $output;
+
+    default:
+  }
+}
