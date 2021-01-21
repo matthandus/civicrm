@@ -1,0 +1,25 @@
+{
+  "name": "drupal/views_argument_token",
+  "description": "Views Token Argument allows you to use token as contextual filter for Views.",
+  "type": "drupal-module",
+  "homepage": "http://drupal.org/project/views_argument_token",
+  "authors": [
+    {
+      "name": "eme",
+      "homepage": "https://www.drupal.org/u/eme"
+    },
+    {
+      "name": "Mohamed Anis Taktak",
+      "homepage": "https://www.drupal.org/u/matio89"
+    },
+    {
+      "name": "Dakwamine",
+      "homepage": "https://www.drupal.org/u/dakwamine"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/views_argument_token"
+  },
+  "license": "GPL-2.0+",
+  "require": { }
+}

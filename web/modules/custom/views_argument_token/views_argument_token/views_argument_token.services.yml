@@ -1,0 +1,4 @@
+services:
+  views_argument_token.token:
+      class: Drupal\views_argument_token\BrowseTokens
+      arguments: ['@module_handler', '@token']

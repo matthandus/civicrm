@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Module file for views_argument_token.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function views_argument_token_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name == 'help.page.views_argument_token') {
+    $output = '';
+    $output .= '<p>' . t('Views Token Argument allows you to use token as contextual filter for Views.') . '</p>';
+    $output .= '<p>' . t('You can use both current user values or the entity related to the current page (for example the current node on node/x pages, or the user on user/x, etc.).') . '</p>';
+    $output .= '<p>' . t('This module has no dependencies but uses <a href="@token">Token</a> module to browse available tokens.', ['@token' => 'https://www.drupal.org/project/token']) . '</p>';
+    return $output;
+  }
+}
