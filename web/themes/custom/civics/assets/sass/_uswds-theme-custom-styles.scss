@@ -30,7 +30,7 @@ i.e.
 
 #block-civics-content {
 
-  a {
+  a:not(.usa-button) {
     @include typeset-link;
   }
 
