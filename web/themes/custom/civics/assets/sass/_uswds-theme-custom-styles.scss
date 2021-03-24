@@ -19,6 +19,11 @@ i.e.
 @include u-padding-right('05');
 ----------------------------------------
 */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 .usa-navbar {
   height: auto;
 
