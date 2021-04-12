@@ -30,6 +30,7 @@
         "drupal/domain": "^1.0@beta",
         "drupal/domain_path": "^1.0@beta",
         "drupal/eu_cookie_compliance": "^1.14",
+        "drupal/media_entity_twitter": "^2.7",
         "drupal/metatag": "^1.15",
         "drupal/pathauto": "^1.8",
         "drupal/podcast": "^1.1",
