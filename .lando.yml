@@ -5,6 +5,11 @@ config:
   xdebug: debug
   config:
     php: .vscode/php.ini
+proxy:
+  appserver:
+    - matthandus-civicrm.lndo.site
+    - matthandus-civicrm-2.lndo.site
+    - matthandus-civicrm-3.lndo.site
 services:
   appserver:
     build:
