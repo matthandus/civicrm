@@ -31,6 +31,7 @@ web/sites/example.settings.local.php
 web/sites/example.sites.php
 web/update.php
 web/web.config
+web/.gitignore
 /web/INSTALL.txt
 /web/README.txt
 /web/example.gitignore
@@ -103,5 +104,4 @@ drupal7
 node_modules
 
 # CiviCRM
-# Commit compiled library temporarily.
-# /web/libraries/civicrm
+/web/libraries/civicrm
