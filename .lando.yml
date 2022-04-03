@@ -14,10 +14,33 @@ services:
   appserver:
     build:
       - composer install
+    overrides:
+      environment:
+        SIMPLETEST_BASE_URL: "https://matthandus-civicrm.lndo.site/"
+        SIMPLETEST_DB: "sqlite://localhost/tmp/db.sqlite"
+        BROWSERTEST_OUTPUT_DIRECTORY: '/app/web/sites/simpletest/browser_output'
+        BROWSERTEST_OUTPUT_BASE_URL: 'https://matthandus-civicrm.lndo.site'
+        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless", "--no-sandbox"]}}, "http://chrome:9515"]'
+        # Nightwatch
+        DRUPAL_TEST_BASE_URL: 'http://appserver'
+        DRUPAL_TEST_DB_URL: 'mysql://drupal9:drupal9@database:3306/drupal9'
+        DRUPAL_TEST_WEBDRIVER_HOSTNAME: chrome
+        DRUPAL_TEST_WEBDRIVER_PORT: 9515
+        DRUPAL_TEST_CHROMEDRIVER_AUTOSTART: 'false'
+        DRUPAL_TEST_WEBDRIVER_CHROME_ARGS: "--disable-gpu --headless --no-sandbox"
+        DRUPAL_NIGHTWATCH_OUTPUT: reports/nightwatch
+        DRUPAL_NIGHTWATCH_IGNORE_DIRECTORIES: node_modules,vendor,.*,sites/*/files,sites/*/private,sites/simpletest
   node:
     type: node
     globals:
       gulp: latest
+      yarn: latest
+  chrome:
+    type: compose
+    app_mount: false
+    services:
+      image: drupalci/webdriver-chromedriver:production
+      command: chromedriver --log-path=/tmp/chromedriver.log --allowed-origins=* --verbose --whitelisted-ips=
 tooling:
   # Front-end tooling
   npm:
@@ -36,3 +59,8 @@ tooling:
     user: www-data
     cmd:
       - appserver: php /app/web/vendor/bin/phpunit -c /app/phpunit.xml
+  nightwatch:
+    service: appserver
+    description: Run Nightwatch.js
+    cmd: yarn test:nightwatch
+    dir: /app/web/core
