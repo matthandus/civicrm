@@ -12,8 +12,18 @@ proxy:
     - matthandus-civicrm-3.lndo.site
 services:
   appserver:
+    build_as_root:
+      - curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+      - apt-get install -y nodejs
+      - npm install --global yarn gulp
     build:
       - composer install
+    run:
+      - drush --root=/app/web si --db-url=mysql://drupal9:drupal9@database/drupal9 -y $1
+      - drush theme:enable civics
+      - drush config:set system.theme default civics -y
+      - mkdir -p private/browsertest_output
+      - yarn install --non-interactive --cwd /app/web/core
     overrides:
       environment:
         SIMPLETEST_BASE_URL: "https://matthandus-civicrm.lndo.site/"
@@ -22,19 +32,14 @@ services:
         BROWSERTEST_OUTPUT_BASE_URL: 'https://matthandus-civicrm.lndo.site'
         MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","chromeOptions":{"args":["--disable-gpu","--headless", "--no-sandbox"]}}, "http://chrome:9515"]'
         # Nightwatch
-        DRUPAL_TEST_BASE_URL: 'http://appserver'
+        DRUPAL_TEST_BASE_URL: "https://matthandus-civicrm.lndo.site/"
         DRUPAL_TEST_DB_URL: 'mysql://drupal9:drupal9@database:3306/drupal9'
         DRUPAL_TEST_WEBDRIVER_HOSTNAME: chrome
         DRUPAL_TEST_WEBDRIVER_PORT: 9515
         DRUPAL_TEST_CHROMEDRIVER_AUTOSTART: 'false'
-        DRUPAL_TEST_WEBDRIVER_CHROME_ARGS: "--disable-gpu --headless --no-sandbox"
+        DRUPAL_TEST_WEBDRIVER_CHROME_ARGS: "--ignore-certificate-errors --disable-gpu --headless --no-sandbox"
         DRUPAL_NIGHTWATCH_OUTPUT: reports/nightwatch
         DRUPAL_NIGHTWATCH_IGNORE_DIRECTORIES: node_modules,vendor,.*,sites/*/files,sites/*/private,sites/simpletest
-  node:
-    type: node
-    globals:
-      gulp: latest
-      yarn: latest
   chrome:
     type: compose
     app_mount: false
@@ -44,11 +49,13 @@ services:
 tooling:
   # Front-end tooling
   npm:
-    service: node
+    service: appserver
   node:
-    service: node
+    service: appserver
   gulp:
-    service: node
+    service: appserver
+  yarn:
+    service: appserver
   # Back-end tooling
   drush:
     service: appserver
@@ -62,5 +69,6 @@ tooling:
   nightwatch:
     service: appserver
     description: Run Nightwatch.js
-    cmd: yarn test:nightwatch
+    cmd:
+      - appserver: yarn test:nightwatch
     dir: /app/web/core
