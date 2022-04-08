@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57c87f81591f305ee24ebfdb99b4e654",
+    "content-hash": "600fad0dda3a6de7bf57fb334134ec82",
     "packages": [
         {
             "name": "adrienrn/php-mimetyper",
@@ -11116,6 +11116,63 @@
                 "source": "https://github.com/Chi-teck/drupal-code-generator/tree/1.33.1"
             },
             "time": "2020-12-05T05:59:11+00:00"
+        },
+        {
+            "name": "civicrm/cv",
+            "version": "v0.3.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/civicrm/cv.git",
+                "reference": "79299ad3e67fe184a74380b64834cb6ea9d3188f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/civicrm/cv/zipball/79299ad3e67fe184a74380b64834cb6ea9d3188f",
+                "reference": "79299ad3e67fe184a74380b64834cb6ea9d3188f",
+                "shasum": ""
+            },
+            "require": {
+                "civicrm/composer-downloads-plugin": "~2.1|^3",
+                "php": ">=7.1.3",
+                "psy/psysh": "@stable",
+                "symfony/console": "^4",
+                "symfony/filesystem": "^4",
+                "symfony/process": "^4"
+            },
+            "bin": [
+                "bin/cv"
+            ],
+            "type": "library",
+            "extra": {
+                "downloads": {
+                    "box": {
+                        "url": "https://github.com/humbug/box/releases/download/3.8.4/box.phar",
+                        "path": "bin/box",
+                        "type": "phar"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Civi\\Cv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Otten",
+                    "email": "totten@civicrm.org"
+                }
+            ],
+            "description": "CLI tool for CiviCRM",
+            "support": {
+                "issues": "https://github.com/civicrm/cv/issues",
+                "source": "https://github.com/civicrm/cv/tree/v0.3.19"
+            },
+            "time": "2022-03-14T22:07:52+00:00"
         },
         {
             "name": "consolidation/annotated-command",

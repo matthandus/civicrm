@@ -117,6 +117,7 @@
     "require-dev": {
         "behat/mink": "^1.10",
         "behat/mink-selenium2-driver": "^1.6",
+        "civicrm/cv": "^0.3.19",
         "drupal/coder": "^8.3",
         "drupal/group": "^1.4",
         "drush/drush": "^10.3",
