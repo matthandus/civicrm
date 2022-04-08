@@ -10,6 +10,8 @@ proxy:
     - matthandus-civicrm.lndo.site
     - matthandus-civicrm-2.lndo.site
     - matthandus-civicrm-3.lndo.site
+  mail:
+    - mail.matthandus-civicrm.lndo.site
 services:
   appserver:
     build_as_root:
@@ -20,8 +22,10 @@ services:
       - composer install
     run:
       - drush --root=/app/web si --db-url=mysql://drupal9:drupal9@database/drupal9 -y $1
+      - cv core:install --cms-base-url="https://matthandus-civicrm.lndo.site/" --db=mysql://drupal9:drupal9@database/drupal9
       - drush theme:enable civics
       - drush config:set system.theme default civics -y
+      - drush pm:enable civicrm -y
       - mkdir -p private/browsertest_output
       - yarn install --non-interactive --cwd /app/web/core
     overrides:
@@ -46,6 +50,10 @@ services:
     services:
       image: drupalci/webdriver-chromedriver:production
       command: chromedriver --log-path=/tmp/chromedriver.log --allowed-origins=* --verbose --whitelisted-ips=
+  mail:
+    type: mailhog
+    hogfrom:
+      - appserver
 tooling:
   # Front-end tooling
   npm:
