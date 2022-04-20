@@ -65,6 +65,10 @@ web/sites/simpletest
 # Except Xdebug related files
 !.vscode/launch.json
 !.vscode/php.ini
+# Except Code Sniffer
+!.vscode/phpcs.sh
+!.vscode/settings.json
+!.vscode/twigcs.sh
 
 # Local Lando Config
 .lando.local.yml
@@ -105,3 +109,6 @@ node_modules
 
 # CiviCRM
 /web/libraries/civicrm
+
+# Test Output
+/private
