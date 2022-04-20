@@ -47,7 +47,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "civicrm/composer-compile-plugin": true,
+            "civicrm/composer-downloads-plugin": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "civicrm/civicrm-asset-plugin": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -115,6 +125,27 @@
         "pre-install-cmd": "git config --global core.autocrlf input"
     },
     "require-dev": {
-        "drush/drush": "^10.3"
+        "behat/mink": "^1.10",
+        "behat/mink-selenium2-driver": "^1.6",
+        "civicrm/cv": "^0.3.19",
+        "drupal/coder": "^8.3",
+        "drupal/group": "^1.4",
+        "drush/drush": "^10.3",
+        "easyrdf/easyrdf": "^1.1",
+        "friends-of-behat/mink-browserkit-driver": "^1.6",
+        "friendsoftwig/twigcs": "^5.1",
+        "justinrainbow/json-schema": "^5.2",
+        "mikey179/vfsstream": "^1.6",
+        "phpspec/prophecy": "^1.15",
+        "phpspec/prophecy-phpunit": "^2.0",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "^6.0",
+        "symfony/css-selector": "^6.0",
+        "symfony/dom-crawler": "^6.0",
+        "symfony/filesystem": "^4",
+        "symfony/finder": "^4",
+        "symfony/lock": "^6.0",
+        "symfony/phpunit-bridge": "^6.0",
+        "symfony/var-dumper": "^5"
     }
 }

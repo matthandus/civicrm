@@ -1,0 +1,41 @@
+{
+  "editor.rulers": [],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  /* PHP Specific configurations */
+  "phpcs.enable": true,
+  "phpcs.standard": "Drupal,DrupalPractice",
+  "phpcs.composerJsonPath": "./composer.json",
+  "phpcs.executablePath": "./.vscode/phpcs.sh",
+  "phpcs.autoConfigSearch": false,
+  "phpcs.trace.server": "verbose",
+  "phpcs.showSources": true,
+  "php-docblocker.gap": true,
+  "php-docblocker.useShortNames": true,
+  "[php]": {
+    "editor.autoIndent": "full",
+    "editor.detectIndentation": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+  },
+  /* End of PHP Configuration */
+  "files.associations": {
+    "*.inc": "php",
+    "*.module": "php",
+    "*.install": "php",
+    "*.theme": "php",
+    "*.tpl.php": "php",
+    "*.test": "php",
+    "*.php": "php"
+  },
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
+  "twigcs.executablePath": "./.vscode/twigcs.sh",
+  "twigcs.enable": true,
+  "twigcs.enabledWarning": true,
+  "[git-commit]": {
+    "editor.rulers": [],
+    "workbench.editor.restoreViewState": false
+  }
+}
