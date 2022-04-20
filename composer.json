@@ -47,7 +47,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "civicrm/composer-compile-plugin": true,
+            "civicrm/composer-downloads-plugin": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "civicrm/civicrm-asset-plugin": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -123,6 +133,7 @@
         "drush/drush": "^10.3",
         "easyrdf/easyrdf": "^1.1",
         "friends-of-behat/mink-browserkit-driver": "^1.6",
+        "friendsoftwig/twigcs": "^5.1",
         "justinrainbow/json-schema": "^5.2",
         "mikey179/vfsstream": "^1.6",
         "phpspec/prophecy": "^1.15",
